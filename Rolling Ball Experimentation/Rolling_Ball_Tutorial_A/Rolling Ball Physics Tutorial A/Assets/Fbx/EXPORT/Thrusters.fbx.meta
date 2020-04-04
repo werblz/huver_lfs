@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 6525bf6b2b0540f46a8874c044f0c873
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Thrust_Back_FrontLeft
+    100002: Thrust_Back_FrontRight
+    100004: Thrust_Down_FrontLeft
+    100006: Thrust_Down_FrontRight
+    100008: Thrust_Down_RearLeft
+    100010: Thrust_Down_RearRight
+    100012: Thrust_Forward_RearLeft
+    100014: Thrust_Forward_RearLeft (1)
+    100016: Thrust_Forward_RearRight
+    100018: Thrust_Forward_RearRight (1)
+    100020: Thrust_Sideways-FrontRight
+    100022: Thrust_Sideways_FrontLeft
+    100024: Thrust_Sideways_RearLeft
+    100026: Thrust_Sideways_RearRight
+    100028: Thrust_Turn-FrontRight
+    100030: Thrust_Turn_FrontLeft
+    100032: Thrust_Turn_RearLeft
+    100034: Thrust_Turn_RearRight
+    100036: Thrust_Up_FrontLeft
+    100038: Thrust_Up_FrontLeft (1)
+    100040: Thrust_Up_FrontRight
+    100042: Thrust_Up_FrontRight (1)
+    100044: Thrust_Up_RearLeft
+    100046: Thrust_Up_RearLeft (1)
+    100048: Thrust_Up_RearRight
+    100050: Thrust_Up_RearRight (1)
+    100052: Thruster
+    100054: Thruster 1
+    100056: Thruster 10
+    100058: Thruster 11
+    100060: Thruster 12
+    100062: Thruster 13
+    100064: Thruster 14
+    100066: Thruster 15
+    100068: Thruster 16
+    100070: Thruster 17
+    100072: Thruster 18
+    100074: Thruster 19
+    100076: Thruster 2
+    100078: Thruster 20
+    100080: Thruster 21
+    100082: Thruster 22
+    100084: Thruster 23
+    100086: Thruster 24
+    100088: Thruster 25
+    100090: Thruster 3
+    100092: Thruster 4
+    100094: Thruster 5
+    100096: Thruster 6
+    100098: Thruster 7
+    100100: Thruster 8
+    100102: Thruster 9
+    100104: //RootNode
+    400000: Thrust_Back_FrontLeft
+    400002: Thrust_Back_FrontRight
+    400004: Thrust_Down_FrontLeft
+    400006: Thrust_Down_FrontRight
+    400008: Thrust_Down_RearLeft
+    400010: Thrust_Down_RearRight
+    400012: Thrust_Forward_RearLeft
+    400014: Thrust_Forward_RearLeft (1)
+    400016: Thrust_Forward_RearRight
+    400018: Thrust_Forward_RearRight (1)
+    400020: Thrust_Sideways-FrontRight
+    400022: Thrust_Sideways_FrontLeft
+    400024: Thrust_Sideways_RearLeft
+    400026: Thrust_Sideways_RearRight
+    400028: Thrust_Turn-FrontRight
+    400030: Thrust_Turn_FrontLeft
+    400032: Thrust_Turn_RearLeft
+    400034: Thrust_Turn_RearRight
+    400036: Thrust_Up_FrontLeft
+    400038: Thrust_Up_FrontLeft (1)
+    400040: Thrust_Up_FrontRight
+    400042: Thrust_Up_FrontRight (1)
+    400044: Thrust_Up_RearLeft
+    400046: Thrust_Up_RearLeft (1)
+    400048: Thrust_Up_RearRight
+    400050: Thrust_Up_RearRight (1)
+    400052: Thruster
+    400054: Thruster 1
+    400056: Thruster 10
+    400058: Thruster 11
+    400060: Thruster 12
+    400062: Thruster 13
+    400064: Thruster 14
+    400066: Thruster 15
+    400068: Thruster 16
+    400070: Thruster 17
+    400072: Thruster 18
+    400074: Thruster 19
+    400076: Thruster 2
+    400078: Thruster 20
+    400080: Thruster 21
+    400082: Thruster 22
+    400084: Thruster 23
+    400086: Thruster 24
+    400088: Thruster 25
+    400090: Thruster 3
+    400092: Thruster 4
+    400094: Thruster 5
+    400096: Thruster 6
+    400098: Thruster 7
+    400100: Thruster 8
+    400102: Thruster 9
+    400104: //RootNode
+    2100000: No Name
+    2300000: Thruster
+    2300002: Thruster 1
+    2300004: Thruster 10
+    2300006: Thruster 11
+    2300008: Thruster 12
+    2300010: Thruster 13
+    2300012: Thruster 14
+    2300014: Thruster 15
+    2300016: Thruster 16
+    2300018: Thruster 17
+    2300020: Thruster 18
+    2300022: Thruster 19
+    2300024: Thruster 2
+    2300026: Thruster 20
+    2300028: Thruster 21
+    2300030: Thruster 22
+    2300032: Thruster 23
+    2300034: Thruster 24
+    2300036: Thruster 25
+    2300038: Thruster 3
+    2300040: Thruster 4
+    2300042: Thruster 5
+    2300044: Thruster 6
+    2300046: Thruster 7
+    2300048: Thruster 8
+    2300050: Thruster 9
+    3300000: Thruster
+    3300002: Thruster 1
+    3300004: Thruster 10
+    3300006: Thruster 11
+    3300008: Thruster 12
+    3300010: Thruster 13
+    3300012: Thruster 14
+    3300014: Thruster 15
+    3300016: Thruster 16
+    3300018: Thruster 17
+    3300020: Thruster 18
+    3300022: Thruster 19
+    3300024: Thruster 2
+    3300026: Thruster 20
+    3300028: Thruster 21
+    3300030: Thruster 22
+    3300032: Thruster 23
+    3300034: Thruster 24
+    3300036: Thruster 25
+    3300038: Thruster 3
+    3300040: Thruster 4
+    3300042: Thruster 5
+    3300044: Thruster 6
+    3300046: Thruster 7
+    3300048: Thruster 8
+    3300050: Thruster 9
+    4300000: Thruster
+    4300002: Thruster
+    4300004: Thruster
+    4300006: Thruster
+    4300008: Thruster
+    4300010: Thruster
+    4300012: Thruster
+    4300014: Thruster
+    4300016: Thruster
+    4300018: Thruster
+    4300020: Thruster
+    4300022: Thruster
+    4300024: Thruster
+    4300026: Thruster
+    4300028: Thruster
+    4300030: Thruster
+    4300032: Thruster
+    4300034: Thruster
+    4300036: Thruster
+    4300038: Thruster
+    4300040: Thruster
+    4300042: Thruster
+    4300044: Thruster
+    4300046: Thruster
+    4300048: Thruster
+    4300050: Thruster
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

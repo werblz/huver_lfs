@@ -1,0 +1,16 @@
+
+ACCELEROMETER BALLY GAME TIPS
+
+: Acclerometer calibration 
+https://answers.unity.com/questions/927515/accelerometer-calibration-2.html 
+
+
+Standard ground check code
+https://answers.unity.com/questions/1384169/how-do-i-check-if-my-player-is-grounded-with-physi.html
+This one seems simplistic though, raycasting directly downward.
+
+
+
+Jumping while on Ground colliders
+https://answers.unity.com/questions/1411531/how-to-jump-on-only-ground-colliders.html
+Note that the corrected suggestion uses tags for the physics objects, so you don't think you're grounded if you hit OTHER objects. This may work.

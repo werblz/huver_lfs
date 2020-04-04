@@ -1,0 +1,169 @@
+SPACE TAXI NEXT
+
+TIPS
+
+https://cpetry.github.io/NormalMap-Online/ - Normalmap creator
+http://wiki.unity3d.com/index.php/ProgressBar - Loading Bar from alpha gradient
+
+NEXT (Details below)
+
+
+
+- Pad countdown timer to clear. If (isAtPad), timer--. Else timer=XSeconds. If timer<=0 Advance
+- License Plate - QR code to huxter.org, and POB366 or C64 128 or something meaningful
+- Try a more rounded car
+- Combine Meshes of the buildings after placement
+- Put up a start screen while the city builds, with a delay
+
+
+
+
+
+DONE - 1) Make the light shaft. Use the same cylinder, with new material. Additive god rays upward texture
+2) Rotate the rays. (Double them so they rotate in two directions?
+3) White HOME base. Start and finish levels there
+DONE - 4) Make purple versions for "Gas"
+DONE - 5) Code to check "Visited" and move on to next, with end condition if the last one in the array is visited. Level Over. Click to reload.
+6) Crash Reset button
+
+: Move radar closer to camera so it does not disappear when you get close to buildings
+: Put a collider cylinder or cone on the camera so if it collides with buildings those buildings stop rendering???
+
+DONE -: Make a class Building
+  : It needs:
+    - Building Type (enum) - Pad, Gas, Default
+	- Has Been Visited - bool
+	- Is Next - bool
+	
+	Things like landing on gas, pad, etc, should be handled here. Things like what it looks like should be here. 
+
+
+
+: Random Building Placement
+  : Instead of choosing just random on the grid (before circular culling) use a two-dimensional loop and place the buildings min_XZ plus some buffer, so it places the buildings on a strict grid. THEN use random scaling and a bit of random nudging to make it all the more random. This way I hope to ensure no building ends up inside another, breaking the game (if it's taller than the pad building, you can't touch the pad.)
+  : Use a formula to add height near the center, so we get a city, with taller buildings in the middle, and flatter ones on the edges, but of course with random variance.
+
+: MAKE NEW BUILDING SCHEME
+  - Use pre-built building blocks, randomly placed, but within a grid to ensure no collision
+  - Then use holding locations on each roof
+  - Use those roof locations to place pads
+
+: Fix Camera_Follow rotation to ONLY follow on the Y, not the other axes, so the car's bank can be better seen - I did this, but I reverted it. OR I put it on a control in Editor.
+
+: Fix car bank to only bank on the forward axis. Could not get the car BANK to do ONLY BANK. It always tilts forward on turn.
+
+DONE : Design standin Home, Gas and Pad objects with the actual pad just a tad above the top of the body of the tower
+
+DONE - Do a circular filter for buildings? If a building is randomly placed outside the circle, try again.
+
+
+UPGRADES:
+- Strafe Control - Make people use only rotation for a few levels
+- Auto Level - Make people use up-thrust for a lot of levels. Then up and down are pushing relative
+- Camera Auto Tilt - The camera automatically pulls down flat when target is far away, and up more when the target is closer
+- Radar Indicator - The cool radar pip... make players look for their targets for a while
+- Auto Lander - This might be tough. But make the car auto land when you're above a target. Hit a button and have it just stop all lateral motion, and drop you gently to the pad.
+- Gas Tank Efficiency - Make you use less gas later
+- Speed Increase - Better forward/backward thrust/braking.
+
+  
+: Drop floor?
+
+DONE - Move camera in default scene, since I moved it all up after scaling HOME Pad up.
+
+: Game_Manager
+  DONE - First, get it to randomly place and scale X pads
+  DONE - Randomly place HOME and GAS pads
+  : Number the pads and display the number on a TextMesh object on top
+  
+
+: Set up Light-up rays above the pad and number. The pad can have light-up brackets with flare, with rays pointing up
+  : Set up a non-physics cylinder, with "god ray" material
+  : Rotate it in a simple animation
+  : Tag it NoRadar
+  : SET UP RADAR CAMERA TO NOT RENDER ANYTHING LABELED "NoRadar" so we don't get the beams on radar
+  
+: RADAR
+  : Grand scheme:
+    DONE - Make the top camera render to a render texture
+    DONE - Put the render texture on a circle (Same damn cylinder? Why not?)
+    : Overlay it with another that plays a static movie. Instead of a movie, though, make a material which randomly picks UVs and display a static image on it, tiled, so it just jumps around, which will simulate a static screen movie perfectly
+    : Make that overlay opaque depending on damage!!! So the more damage you have, the more obscured your radar
+    : Add a cracked glass overlay as well for shits and giggles
+
+  
+PLACEHOLDER DONE - VFX for sparks/explosions, scaled to the impact velocity, remove the spheres
+
+: If !hasControl && relativeVelocity < 0.001 - Bring up RESTART button
+
+DONE - Direction indicator on top-down radar map, to next pad
+
+NOT NECESSARY : !!! Put in a check for the Thrusters to see if they are enabled before enabling. This may be automatic anyway, but check. I fear the downward thrusters are not flickering/scaling for some reason, because others are working ok. Something in the downward thrust code doing something different?
+
+
+: Raycast downward flames and if it connects to ground, play a flame-flattening VFX there, moving it around to the raycast location on Update. How does this affect other flames hitting other things? Generalize this? So it will play the VFX along the collision normal? And then it works for side thrusters too?
+
+
+: Put a TextMesh atop the platforms, and feed the number the string of the array number when placing the buildings.
+: Later, you may replace these with modeled meshes that include the number and "god rays" upward shaped to the numbers, because TextMesh won't do that.
+
+: Create a random building configurer
+DONE - Create a random building grid placer too, for ambient buildings
+
+:: LATER: Model car in sections, then model it all damaged as blendshapes. Use impact zones to crumple parts of the car on a slider. Landing at gas station does a repair over time on a per section basis.
+
+:: DAMAGE: You repair damage only at home? You see the buckled panels reform and the radar/dash damage fade back to normal
+
+
+UnityEvent - Look into this for listening to other things, such as the camera being able to listen to a signal from the taxi controller when it has no gas (to stop rotational follow)
+
+https://www.youtube.com/watch?v=mC_yUEnGQXM
+
+https://www.youtube.com/watch?v=ZrxNgftlWJA
+
+DONE - However, for rb.hasGas, I'm not sure... perhaps put a Get/Set in the Taxi_Controller? Then use the Camera Follow to Get that value? (With a FindFile to find the taxi?) 
+-- This works by referencing in the script by name, which is the same as class. So for Taxi-Controller.cs on the Taxi object, reference in Taxi_Controller taxi = null; and then reference in the main GameObject for Taxi and it will work. Then you can do things like taxi.hasControl, etc.
+
+
+A nice hover system. It uses four corners with raycasted hover distance, and rocks the car nicely by applying a force at position for each corner.
+
+It also has a nice camera follow script that uses SmoothDamp on a vector3 instead of a lerp multiplied by time.DeltaTime
+
+https://www.youtube.com/watch?v=r9OEZmbD9q0 
+
+
+DONE - Now get collision threshold detection working
+
+https://docs.unity3d.com/ScriptReference/Collision-relativeVelocity.html
+https://docs.unity3d.com/ScriptReference/Collision.html
+
+DONE - Interesting: A point-of-collision detector! I can use it to make sparks or other impact visuals
+https://docs.unity3d.com/ScriptReference/ContactPoint.html
+
+Now hear me out:
+
+DONE - Use relativeVelocity to find out how big the impact was. Use a > threshold to create a full crash. 
+DONE - Use the contactPoint to place a VFX, the relativeVelocity to show how large to scale the VFX, and the normal to tell it which direction to point? Maybe not... but the rest... Play a sound on impact.
+This is a very flexible feature which can do other things like return the number of objects involved in the collision and other stuff.
+
+
+
+
+NEXT:
+
+- Try building to a standalone Windows Executable
+- Collision Detection with threshold for crash. Crash will just flag !hasGas for now, which will drop the car on an angle. Later, burning and smoke and screaming. If passenger, two scream sounds, if not, just one
+- Get the Camera Rotate to observe hasGas, and NOT rotate if none
+- VFX for crash, played at crash location. Simple for now, but later add collision scale depending on velocity
+- Thrusters (front/back, side) scaled in Y depending on Joy value (0.0-1.0)
+- Rotate thrusters
+- Paint a better flame alpha with streaks so the rotation makes it look more random
+- Dashboard
+  - Put Top camera bottom center. If this takes a rendertexture, fine
+  - Fuel gauge, lerping from 0-1 based on max gas value
+  - Thruster indicator
+  - Next Pad Number Indicator
+  - Next Pad Pointer Indicator (a circle around the digital number) with either brightness or length indicating distance.
+- Number the pads randomly, make those numbers print correctly on top of pads
+- Game Mechanic: Go from pad to pad in sequence. Record time.
+- End Round if stuck with no gas. Restart results in forfeiture of last round's cash. (Basically reset level)
